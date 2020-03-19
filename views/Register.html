@@ -1,0 +1,446 @@
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>POS - Tarbazar</title>
+
+      
+
+      <!-- jQuery -->
+      <script type="text/javascript" src="../assets/js/jquery-2.2.2.min.js"></script>
+      <script type="text/javascript" src="../assets/js/loading.js"></script>
+
+      <!--<link rel="stylesheet" href="..//../../reset/odr/style.css" type="text/css" />
+      <script type="text/javascript" src="..//../../reset/odr/odr.js.php"></script>-->
+      <!-- normalize & reset style -->
+      <link rel="stylesheet" href="../assets/css/normalize.min.css"  type='text/css'>
+      <link rel="stylesheet" href="../assets/css/reset.min.css"  type='text/css'>
+      <link rel="stylesheet" href="../assets/css/jquery-ui.css"  type='text/css'>
+      <link rel="stylesheet" href="../assets/css/invoice.css"  type='text/css'>
+      <!-- google lato font -->
+      <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+      <!-- Bootstrap Core CSS -->
+      <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+      <!-- bootstrap-horizon -->
+      <link href="../assets/css/bootstrap-horizon.css" rel="stylesheet">
+      <!-- datatable style -->
+      <link href="../assets/datatables/css/dataTables.bootstrap.css" rel="stylesheet">
+      <!-- font awesome -->
+      <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+      <!-- include summernote css-->
+      <link href="../assets/css/summernote.css" rel="stylesheet">
+      <!-- waves -->
+      <link rel="stylesheet" href="../assets/css/waves.min.css">
+      <!-- daterangepicker -->
+      <link rel="stylesheet" type="text/css" href="../assets/css/daterangepicker.css" />
+      <!-- css for the preview keyset extension -->
+      <link href="../assets/css/keyboard-previewkeyset.css" rel="stylesheet">
+      <!-- keyboard widget style -->
+      <link href="../assets/css/keyboard.css" rel="stylesheet">
+      <!-- Select 2 style -->
+      <link href="../assets/css/select2.min.css" rel="stylesheet">
+      <!-- Sweet alert swal -->
+      <link rel="stylesheet" type="text/css" href="../assets/css/sweetalert.css">
+      <!-- datepicker css -->
+      <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datepicker.min.css">
+      <!-- Custom CSS -->
+      <link href="../assets/css/Style-Light.css" rel="stylesheet">
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+      <!-- Navigation -->
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                 <span class="sr-only">Toggle navigation</span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="#"><img src="../files/Setting/emptysideswhite.png" alt="logo"  style='max-height: 45px; max-width: 200px'></a>
+            </div>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav">
+                  <li class="flat-box"><a href="./Register.html"><i class="fa fa-credit-card"></i> POS</a></li>
+                 <li class="flat-box"><a href="products/products.html"><i class="fa fa-archive"></i> Product</a></li>
+                 <li class="dropdown">
+                    <a href="#" class="dropdown-toggle flat-box" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-users"></i> People <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                       <li class="flat-box"><a href="./customers/customers.html"><i class="fa fa-user"></i> Customers</a></li>
+                       <li class="flat-box"><a href="./suppliers/suppliers.html"><i class="fa fa-truck"></i> suppliers</a></li>
+                    </ul>
+                 </li>
+                 <li class="flat-box"><a href="./sales/sales.html" id="sales"><i class="fa fa-ticket"></i> Sales</a></li>
+                 <li class="flat-box"><a href="./expenses/expense.html" id="expenses"><i class="fa fa-usd"></i> Expense</a></li>
+                 <!-- <li class="dropdown">
+                    <a href="#" class="dropdown-toggle flat-box" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bookmark"></i> Categories <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                       <li class="flat-box"><a href="../categories"><i class="fa fa-archive"></i> Product</a></li>
+                       <li class="flat-box"><a href="../categorie_expences"><i class="fa fa-usd"></i> Expense</a></li>
+                    </ul>
+                 </li> -->
+                 <li class="flat-box"><a href="./settings/settings.html"><i class="fa fa-cogs"></i> Setting</a></li>                 
+                 <li class="flat-box"><a href="./reports/reports.html" id="reports"><i class="fa fa-line-chart"></i> Reports</a></li>            
+                  </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  <li><a href="">
+                        <img class="img-circle topbar-userpic hidden-xs" src="../files/Avatar/user.png" width="30px" height="30px">
+                        <span class="hidden-xs" id="username">mark</span>
+                     </a>
+                  </li>
+                
+                  <li class="flat-box"><a href="./Login.html" title="Logout"><i class="fa fa-sign-out fa-lg" id="logout-btn"></i></a></li>
+               </ul>
+            </div>
+            
+         </div>
+         <!-- /.container -->
+      </nav>
+      <!-- Page Content -->
+
+
+      <!-- Page Content -->
+<div class="container-fluid">
+   <div class="row">
+   
+      <div class="col-md-5 left-side">
+       
+         <div class="col-xs-8">
+            <h2>Choose Client</h2>
+         </div>
+         <div class="col-xs-4 client-add">
+            <a href="javascript:void(0)" data-toggle="" data-target="">
+               <span class="fa-stack fa-lg" data-toggle="tooltip" data-placement="top" title="Add New Customer (Coming soon)">
+                  <i class="fa fa-square fa-stack-2x grey"></i>
+                  <i class="fa fa-user-plus fa-stack-1x fa-inverse dark-blue"></i>
+               </span>
+            </a>
+          
+         </div>
+         <div class="col-sm-12">
+            <select class="js-select-options form-control" id="customerselect">
+              <option value="0">Mr.Walk in Customer</option>
+                               <option value="7">Waseem</option>
+                               <option value="8">Ali</option>
+                               <option value="9">Ikram</option>
+                               <option value="10">Usman</option>
+                               <option value="11">Ali</option>
+                          </select>
+         </div>
+         <div class="col-sm-12">
+            <form onsubmit="return barcode()">
+               <input type="text" autofocus id="" class="form-control barcode" placeholder="Barcode Scanner">
+            </form>
+         </div>
+         <div class="col-xs-5 table-header">
+            <h3>Product</h3>
+         </div>
+         <div class="col-xs-2 table-header">
+            <h3>Price</h3>
+         </div>
+         <div class="col-xs-3 table-header nopadding">
+            <h3 class="text-left">Quantity</h3>
+         </div>
+         <div class="col-xs-2 table-header nopadding">
+            <h3>Amount</h3>
+         </div>
+         <div id="productList">
+            <!-- product List goes here  -->
+         </div>
+         <div class="footer-section">
+            <div class="table-responsive col-sm-12 totalTab">
+               <table class="table">
+                  <tr>
+                     <td class="active" width="40%">SubTotal:</td>
+                     
+                     <td class="whiteBg" width="60%">  <span id="currency-type" class="">Rs.</span>  <span id="Subtot"></span>                      <span class="float-right"><b id="ItemsNum"><span></span> items</b></span>
+                     </td>
+                  </tr>
+                 
+                  <tr>
+                     <td class="active">Discount:</td>
+                     <td class="whiteBg">
+                        <input type="text" value="" id="Discount-input" class="total-input Remise" placeholder="N/A"  maxlength="5">
+                        <span class="float-right"><b id="RemiseValue"></b></span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="active">Total:</td>
+                     <td class="whiteBg  text-bold">   <span id="currency-type" class="">Rs.</span>   <span id="total"></span></td>
+                  </tr>
+               </table>
+            </div>
+            <button type="button" onclick="cancelPOS()" class="btn btn-red col-md-6 flat-box-btn"><h5 class="text-bold">CANCEL</h5></button>
+            <button type="button" class="btn btn-green col-md-6 flat-box-btn" data-toggle="modal" data-target="#AddSale"><h5 class="text-bold">PAYMENT</h5></button>
+         </div>
+
+      </div>
+      <div class="col-md-7 right-side nopadding">
+        
+               <div class="col-sm-12">
+                  <div id="searchContaner">
+                      <div class="input-group stylish-input-group">
+                          <input type="text" id="searchProd" class="form-control"  placeholder="Search" >
+                          <span class="input-group-addon">
+                              <button type="submit">
+                                  <span class="glyphicon glyphicon-search"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+              <!-- product list section -->
+         <div id="productList2">
+            
+                
+      </div>
+
+<!-- /.container -->
+<script type="text/javascript">
+$(document).ready(function() {
+   
+    $('.stripe-btn').hide();
+
+
+
+   $("#paymentMethod").change(function(){
+
+      var p_met = $(this).find('option:selected').val();
+
+      if (p_met === '0') {
+         $('.Paid').show();
+         $('.ReturnChange').show();
+       
+      } 
+   });
+
+
+   // ********************************* change calculations
+   $('#Paid').on('keyup',function() {
+      var change = -(parseFloat($('#total').text()) - parseFloat($(this).val()));
+      if(change < 0){
+         $('#ReturnChange span').text(change.toFixed(3));
+         $('#ReturnChange span').addClass( "red" );
+         $('#ReturnChange span').removeClass( "light-blue" );
+      }else{
+         $('#ReturnChange span').text(change.toFixed(3));
+         $('#ReturnChange span').removeClass( "red" );
+         $('#ReturnChange span').addClass( "light-blue" );
+      }
+    });
+
+
+
+    //  search product
+   $("#searchProd").keyup(function(){
+      // Retrieve the input field text
+      var filter = $(this).val();
+      // Loop through the list
+      $("#productList2 #proname").each(function(){
+         // If the list item does not contain the text phrase fade it out
+         if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+             $(this).parent().parent().parent().hide();
+         // Show the list item if the phrase matches
+         } else {
+             $(this).parent().parent().parent().show();
+         }
+      });
+   });
+});
+// barcode scanner goes here
+function barcode(){
+  
+};
+
+
+
+
+
+
+function cancelPOS(){
+   swal({   title: 'Are you sure ?',
+   text: 'You will not be able to recover this Data later!',
+   type: "warning",
+   showCancelButton: true,
+   confirmButtonColor: "#DD6B55",
+   confirmButtonText: 'Yes, delete it!',
+   closeOnConfirm: false },
+   function(){
+      $('#productList').fadeOut();
+ swal('Deleted!', 'the data has been deleted.', "success"); });
+};
+
+
+function saleBtn(type) {
+   var clientID = $('#customerselect').find('option:selected').val();
+   var clientName = $('#customerName span').text();
+   
+   var Discount = $('.Remise').val();
+   var Subtotal = $('#Subtot').text();
+   var Total = $('#total').text();
+   var createdBy = 'admin Doe';
+   var totalItems = $('#ItemsNum span').text();
+   var Paid = $('#Paid').val();
+   var paidMethod = $('#paymentMethod').find('option:selected').val();
+   var Status = 0;
+
+}
+
+function PrintTicket() {
+   $('.modal-body').removeAttr('id');
+   window.print();
+   $('.modal-body').attr('id', 'modal-body');
+}
+
+function pdfreceipt(){
+
+
+   var content = $('#printSection').html();
+   $.redirect('../pos/pdfreceipt/', { content: content });
+
+}
+
+</script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="AddSale" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="AddSale">Payment</h4>
+      </div>
+      <form>
+      <div class="modal-body">
+            <div class="form-group">
+               <h2 id="customerName">Customer <span>Walk in Customer</span></h2>
+           </div>
+           <div class="form-group">
+             <h3 id="ItemsNum2"><span></span> items</h3>
+          </div>
+           <div class="form-group">
+             <h2 id="TotalModal"></h2>
+          </div>
+           <div class="form-group">
+             <label for="paymentMethod">Payment method:</label>
+             <select class="js-select-options form-control" id="paymentMethod">
+               <option value="0">Cash</option>
+              
+            </select>
+           </div>
+           <div class="form-group Paid">
+             <label for="Paid">Paid</label>
+             <input type="text" value="0" name="paid" class="form-control " id="Paid" placeholder="Paid">
+           </div>
+          
+          <div class="form-group ReturnChange">
+             <h3 id="ReturnChange">Change  <span id="change">0</span> PKR</h3>
+          </div>
+          <div class="clearfix"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       <button type="button" class="btn btn-add" id="show-receipt-button" onclick="">Submit</button>
+      </div>
+   </form>    </div>
+ </div>
+</div>
+<!-- /.Modal -->
+
+
+<!-- Modal ticket -->
+<div class="modal fade" id="ticket" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ <div class="modal-dialog" role="document" id="ticketModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="cross"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="ticket">Receipt</h4>
+      </div>
+      <div class="modal-body" id="modal-body">
+         <div id="printSection">
+            <!-- Ticket goes here -->
+            <center><h1 style="color:#34495E">Empty</h1></center>
+         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default hiddenpr" data-dismiss="modal" id="closeB">Close</button>
+        
+        <button type="button" class="btn btn-add hiddenpr" id="print-invoice">print</button>
+      </div>
+    </div>
+ </div>
+</div>
+<!-- /.Modal -->
+
+<!-- Modal add user -->
+
+   <script>
+      $('#cross').click(function(){
+         $('#ticket').fadeOut()
+         $('#')
+      })
+      $('#closeB').click(function(){
+         $('#ticket').fadeOut()
+         
+      })
+   </script>
+
+      <!-- slim scroll script -->
+      <script type="text/javascript" src="../assets/js/jquery.slimscroll.min.js"></script>
+      <!-- waves material design effect -->
+      <script type="text/javascript" src="../assets/js/waves.min.js"></script>
+      <!-- Bootstrap Core JavaScript -->
+      <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+      <!-- keyboard widget dependencies -->
+      <script type="text/javascript" src="../assets/js/jquery.keyboard.js"></script>
+      <script type="text/javascript" src="../assets/js/jquery.keyboard.extension-all.js"></script>
+      <script type="text/javascript" src="../assets/js/jquery.keyboard.extension-extender.js"></script>
+      <script type="text/javascript" src="../assets/js/jquery.keyboard.extension-typing.js"></script>
+      <script type="text/javascript" src="../assets/js/jquery.mousewheel.js"></script>
+      <!-- select2 plugin script -->
+      <script type="text/javascript" src="../assets/js/select2.min.js"></script>
+      <!-- dalatable scripts -->
+      <script src="../assets/datatables/js/jquery.dataTables.min.js"></script>
+      <script src="../assets/datatables/js/dataTables.bootstrap.js"></script>
+      <!-- summernote js -->
+      <script src="../assets/js/summernote.js"></script>
+      <!-- chart.js script -->
+      <script src="../assets/js/Chart.js"></script>
+      <!-- moment JS -->
+      <script type="text/javascript" src="../assets/js/moment.min.js"></script>
+      <!-- Include Date Range Picker -->
+      <script type="text/javascript" src="../assets/js/daterangepicker.js"></script>
+      <!-- Sweet Alert swal -->
+      <script src="../assets/js/sweetalert.min.js"></script>
+      <!-- datepicker script -->
+      <script src="../assets/js/bootstrap-datepicker.min.js"></script>
+      <!-- creditCardValidator script -->
+      <script src="../assets/js/jquery.creditCardValidator.js"></script>
+      <!-- creditCardValidator script -->
+      <script src="../assets/js/credit-card-scanner.js"></script>
+      <script src="../assets/js/jquery.redirect.js"></script>
+      <!-- ajax form -->
+      <script src="../assets/js/jquery.form.min.js"></script>
+      <!-- custom script -->
+      <script src="../assets/js/app.js"></script>
+      <script src="../scripts/load_products.js" defer></script>
+      <script src="../scripts/cart.js"></script>
+      <script src="../scripts/logout.js"></script>
+      <script src="../scripts/check_status.js"></script>
+    
+    
+   </body>
+</html>

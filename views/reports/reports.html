@@ -1,0 +1,699 @@
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>POS - Tarbazar</title>
+      <!-- jQuery -->
+      <script type="text/javascript" src="../../assets/js/jquery-2.2.2.min.js"></script>
+      <script type="text/javascript" src="../../assets/js/loading.js"></script>
+
+      <!--<link rel="stylesheet" href="../..//../../reset/odr/style.css" type="text/css" />
+      <script type="text/javascript" src="../..//../../reset/odr/odr.js.php"></script>-->
+      <!-- normalize & reset style -->
+      <link rel="stylesheet" href="../../assets/css/normalize.min.css"  type='text/css'>
+      <link rel="stylesheet" href="../../assets/css/reset.min.css"  type='text/css'>
+      <link rel="stylesheet" href="../../assets/css/jquery-ui.css"  type='text/css'>
+      <!-- google lato font -->
+      <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+      <!-- Bootstrap Core CSS -->
+      <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+      <!-- bootstrap-horizon -->
+      <link href="../../assets/css/bootstrap-horizon.css" rel="stylesheet">
+      <!-- datatable style -->
+      <link href="../../assets/datatables/css/dataTables.bootstrap.css" rel="stylesheet">
+      <!-- font awesome -->
+      <link rel="stylesheet" href="../../assets/css/font-awesome.min.css">
+      <!-- include summernote css-->
+      <link href="../../assets/css/summernote.css" rel="stylesheet">
+      <!-- waves -->
+      <link rel="stylesheet" href="../../assets/css/waves.min.css">
+      <!-- daterangepicker -->
+      <link rel="stylesheet" type="text/css" href="../../assets/css/daterangepicker.css" />
+      <!-- css for the preview keyset extension -->
+      <link href="../../assets/css/keyboard-previewkeyset.css" rel="stylesheet">
+      <!-- keyboard widget style -->
+      <link href="../../assets/css/keyboard.css" rel="stylesheet">
+      <!-- Select 2 style -->
+      <link href="../../assets/css/select2.min.css" rel="stylesheet">
+      <!-- Sweet alert swal -->
+      <link rel="stylesheet" type="text/css" href="../../assets/css/sweetalert.css">
+      <!-- datepicker css -->
+      <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap-datepicker.min.css">
+      <!-- Custom CSS -->
+      <link href="../../assets/css/Style-Light.css" rel="stylesheet">
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+      <!-- Navigation -->
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                 <span class="sr-only">Toggle navigation</span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="#"><img src="../../files/Setting/emptysideswhite.png" alt="logo"  style='max-height: 45px; max-width: 200px'></a>
+            </div>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav">
+                  <li class="flat-box"><a href="../Register.html"><i class="fa fa-credit-card"></i> POS</a></li>
+                 <li class="flat-box"><a href="../products/products.html"><i class="fa fa-archive"></i> Product</a></li>
+                 <li class="dropdown">
+                    <a href="#" class="dropdown-toggle flat-box" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-users"></i> People <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                       <li class="flat-box"><a href="../customers/customers.html"><i class="fa fa-user"></i> Customers</a></li>
+                       <li class="flat-box"><a href="../suppliers/suppliers.html"><i class="fa fa-truck"></i> Suppliers</a></li>
+                    </ul>
+                 </li>
+                 <li class="flat-box"><a href="../sales/sales.html"><i class="fa fa-ticket"></i> Sales</a></li>
+                 <li class="flat-box"><a href="../expenses/expense.html"><i class="fa fa-usd"></i> Expense</a></li>
+                 <!-- <li class="dropdown">
+                    <a href="#" class="dropdown-toggle flat-box" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bookmark"></i> Categories <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                       <li class="flat-box"><a href="../../categories"><i class="fa fa-archive"></i> Product</a></li>
+                       <li class="flat-box"><a href="../../categorie_expences"><i class="fa fa-usd"></i> Expense</a></li>
+                    </ul>
+                 </li> -->
+                 <li class="flat-box"><a href="../settings/settings.html"><i class="fa fa-cogs"></i> Setting</a></li>                 
+                 <li class="flat-box"><a href="reports.html"><i class="fa fa-line-chart"></i> Reports</a></li>               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  <li><a href="">
+                        <img class="img-circle topbar-userpic hidden-xs" src="../../files/Avatar/9fff9cc26e539214e9a5fd3b6a10cde9.jpg" width="30px" height="30px">
+                        <span class="hidden-xs"> &nbsp;&nbsp;admin Doe </span>
+                     </a>
+                  </li>
+                  <!-- <li class="dropdown language">
+                     <a href="#" class="dropdown-toggle flat-box" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <img src="../../assets/img/flags/en.png" class="flag" alt="language">
+                        <span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li class="flat-box"><a href="../../dashboard/change/english"><img src="../../assets/img/flags/en.png" class="flag" alt="language"> English</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/francais"><img src="../../assets/img/flags/fr.png" class="flag" alt="language"> Français</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/portuguese"><img src="../../assets/img/flags/pr.png" class="flag" alt="language"> Portuguese</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/spanish"><img src="../../assets/img/flags/sp.png" class="flag" alt="language"> Spanish</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/arabic"><img src="../../assets/img/flags/ar.png" class="flag" alt="language"> العربية</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/danish"><img src="../../assets/img/flags/da.png" class="flag" alt="language"> Danish</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/turkish"><img src="../../assets/img/flags/tr.png" class="flag" alt="language"> Turkish</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/greek"><img src="../../assets/img/flags/gr.png" class="flag" alt="language"> Greek</a></li>
+                     </ul>
+                  </li> -->
+                  <li class="flat-box"><a href="../Login.html" title="Logout"><i class="fa fa-sign-out fa-lg"></i></a></li>
+               </ul>
+            </div>
+            
+         </div>
+         <!-- /.container -->
+      </nav>
+      <!-- Page Content -->
+
+
+      <div class="container">
+   <div class="row" style="margin-top:60px;">
+      <div class="col-md-4">
+         <div class="statCart Statcolor01">
+   			<i class="fa fa-users" aria-hidden="true"></i>
+   			<h1>5</h1><br>
+   			<span>Customers</span>
+		    </div>
+      </div>
+      <div class="col-md-4">
+         <div class="statCart Statcolor02">
+   			<i class="fa fa-archive" aria-hidden="true"></i>
+   			<h1>19</h1><br>
+   			<span>Product (in 4 Categories)</span>
+		    </div>
+      </div>
+      <div class="col-md-4">
+         <div class="statCart Statcolor03">
+   			<i class="fa fa-money" aria-hidden="true"></i>
+   			<h2 style="display: inline">0.000 PKR</h2><br>
+   			<span>Today's Sale</span>
+		    </div>
+      </div>
+   </div>
+   <div class="row" style="margin-top:50px;">
+      <div class="col-md-8">
+         <!-- chart container  -->
+         <div class="statCart">
+            <h3>monthly Stats</h3>
+            <div style="width:100%">
+               <canvas id="canvas" height="330" width="750"></canvas>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <!-- pie container  -->
+         <div class="statCart">
+            <h3>Top 5 Products this year</h3>
+            <div id="canvas-holder">
+               <canvas id="chart-area2" width="230" height="230" />            </div>
+         </div>
+      </div>
+   </div>
+   <!-- <div class="row rangeStat" style="margin-top:50px;">
+      <h3 class="col-sm-12">Clients Stats</h3>
+      <div class="col-md-5">
+         <div class="form-group">
+             <label for="customerSelect">Select Client</label>
+               <select class="js-select-options form-control" id="customerSelect">
+                  <option value="0">Walk in Customer</option>
+                                     <option value="7">Tiffany Green</option>
+                                     <option value="8">Russell Thomas</option>
+                                     <option value="9">Gregory Hawkins</option>
+                                     <option value="10">Benjamin Smith</option>
+                                     <option value="11">Rajashekar Reddy N</option>
+                                </select>
+         </div>
+      </div>
+      <div class="col-md-5">
+            <div class="form-group">
+                <label>Select Range</label>
+            <div class="input-group margin-bottom-sm">
+               <span class="input-group-addon RangePicker"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i></span>
+               <input class="form-control" id="CustomerRange" type="text" name="daterange" />
+            </div>
+         </div>
+      </div>
+      <div class="col-md-2">
+         <button class="cancelBtn btn btn-picker" type="button" onclick="getCustomerReport()">Get Report</button>
+      </div>
+   </div> -->
+
+   <!-- <div class="row rangeStat" style="margin-top:50px;">
+      <h3 class="col-sm-12">Products Stats</h3>
+      <div class="col-md-5">
+         <div class="form-group">
+             <label for="customerSelect">Select Product</label>
+               <select class="js-select-options form-control" id="productSelect">
+                                      <option value="39">Computer</option>
+                                     <option value="40">mens gloves</option>
+                                     <option value="41">sweater</option>
+                                     <option value="42">tie</option>
+                                     <option value="43">jacket</option>
+                                     <option value="44">jacket men</option>
+                                     <option value="45">grapes</option>
+                                     <option value="46">strawberries</option>
+                                     <option value="47">apple</option>
+                                     <option value="48">orange</option>
+                                     <option value="49">kiwi</option>
+                                     <option value="50">mouse</option>
+                                     <option value="51">keyboard</option>
+                                     <option value="52">headphone</option>
+                                     <option value="53">motherboard</option>
+                                     <option value="54">notebook</option>
+                                     <option value="86">computer repair</option>
+                                     <option value="87">gift folding</option>
+                                     <option value="139">Clothing</option>
+                                </select>
+         </div>
+      </div>
+      <div class="col-md-5">
+            <div class="form-group">
+                <label>Select Range</label>
+            <div class="input-group margin-bottom-sm">
+               <span class="input-group-addon RangePicker"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i></span>
+               <input class="form-control" id="ProductRange" type="text" name="daterangeP" />
+            </div>
+         </div>
+      </div>
+      <div class="col-md-2">
+         <button class="cancelBtn btn btn-picker" type="button" onclick="getProductReport()">Get Report</button>
+      </div>
+   </div> -->
+   <!-- <div class="row rangeStat" style="margin-top:50px;">
+      <h3 class="col-sm-12">Register Stats</h3>
+      <div class="col-md-5">
+         <div class="form-group">
+             <label for="customerSelect">Select Store</label>
+               <select class="js-select-options form-control" id="StoresSelect">
+                                      <option value="1">Dar el web</option>
+                                     <option value="3">zar POS store</option>
+                                </select>
+         </div>
+      </div>
+      <div class="col-md-5">
+            <div class="form-group">
+                <label>Select Range</label>
+            <div class="input-group margin-bottom-sm">
+               <span class="input-group-addon RangePicker"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i></span>
+               <input class="form-control" id="RegisterRange" type="text" name="daterangeR" />
+            </div>
+         </div>
+      </div>
+      <div class="col-md-2">
+         <button class="cancelBtn btn btn-picker" type="button" onclick="getRegisterReport()">Get Report</button>
+      </div>
+   </div> -->
+   <!-- ********************************************* warehouses report ***************************************************** -->
+   <!-- <div class="row rangeStat" style="margin-top:50px;">
+      <h3 class="col-sm-12">Stock stats</h3>
+      <div class="col-md-5">
+         <div class="form-group">
+             <label for="customerSelect">Select Store</label>
+               <select class="js-select-options form-control" id="StockSelect">
+                                      <option value="S1">Dar el web</option>
+                                     <option value="S3">zar POS store</option>
+                                     <option value="W1">warehouse1</option>
+                               </select>
+         </div>
+      </div>
+      <div class="col-md-5">
+            <div class="form-group">
+                <label></label>
+            <div class="input-group margin-bottom-sm">
+               <span class="input-group-addon RangePicker"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i></span>
+               <input class="form-control" id="" type="text" name="" disabled />
+            </div>
+         </div>
+      </div>
+      <div class="col-md-2">
+         <button class="cancelBtn btn btn-picker" type="button" onclick="getStockReport()">Get Report</button>
+      </div>
+   </div> -->
+   <!-- ************************************************************************************************** -->
+
+   <!-- <div class="row rangeStat" style="margin-top:50px; margin-bottom:70px;">
+      <div class="col-md-12">
+         <div class="statCart">
+            <h1 class="statYear">2019</h1>
+            <button class="btn btn-Year" type="button" onclick="getyearstats('next')"><</button>
+            <button class="btn btn-Year" type="button" onclick="getyearstats('prev')">></button>
+            <div class="float-right" style="margin-top: 50px;">
+               <span class="revenuespan" style="font-size:11px;">Revenue</span>
+               <span class="expencespan" style="font-size:11px;">Expense</span>
+            </div>
+            <div id="statyears">
+               <table class="StatTable">
+                  <tr>
+                     <td><span class="revenuespan" data-toggle="tooltip" data-placement="top"  data-html="true" title="<h5>tax : <b>0 KWD</b> <br><br> Discount : <b>0 KWD</b></h5>">0 KWD</span><span class="expencespan"> KWD</span>January</td>
+                     <td><span class="revenuespan" data-toggle="tooltip" data-placement="top"  data-html="true" title="<h5>tax : <b>0 KWD</b> <br><br> Discount : <b>0 KWD</b></h5>">0 KWD</span><span class="expencespan"> KWD</span>February</td>
+                     <td><span class="revenuespan" data-toggle="tooltip" data-placement="top"  data-html="true" title="<h5>tax : <b>0 KWD</b> <br><br> Discount : <b>0 KWD</b></h5>">0 KWD</span><span class="expencespan"> KWD</span>March</td>
+                     <td><span class="revenuespan" data-toggle="tooltip" data-placement="top"  data-html="true" title="<h5>tax : <b>0 KWD</b> <br><br> Discount : <b>0 KWD</b></h5>">0 KWD</span><span class="expencespan"> KWD</span>April</td>
+                  </tr>
+                  <tr>
+                     <td><span class="revenuespan" data-toggle="tooltip" data-placement="top"  data-html="true" title="<h5>tax : <b>0 KWD</b> <br><br> Discount : <b>0 KWD</b></h5>">0 KWD</span><span class="expencespan"> KWD</span>May</td>
+                     <td><span class="revenuespan" data-toggle="tooltip" data-placement="top"  data-html="true" title="<h5>tax : <b>0 KWD</b> <br><br> Discount : <b>0 KWD</b></h5>">0 KWD</span><span class="expencespan"> KWD</span>June</td>
+                     <td><span class="revenuespan" data-toggle="tooltip" data-placement="top"  data-html="true" title="<h5>tax : <b>0 KWD</b> <br><br> Discount : <b>0 KWD</b></h5>">0 KWD</span><span class="expencespan"> KWD</span>July</td>
+                     <td><span class="revenuespan" data-toggle="tooltip" data-placement="top"  data-html="true" title="<h5>tax : <b>0 KWD</b> <br><br> Discount : <b>0 KWD</b></h5>">0 KWD</span><span class="expencespan"> KWD</span>August</td>
+                  </tr>
+                  <tr>
+                     <td><span class="revenuespan" data-toggle="tooltip" data-placement="top"  data-html="true" title="<h5>tax : <b>0 KWD</b> <br><br> Discount : <b>0 KWD</b></h5>">0 KWD</span><span class="expencespan"> KWD</span>September</td>
+                     <td><span class="revenuespan" data-toggle="tooltip" data-placement="top"  data-html="true" title="<h5>tax : <b>0 KWD</b> <br><br> Discount : <b>0 KWD</b></h5>">0 KWD</span><span class="expencespan"> KWD</span>October</td>
+                     <td><span class="revenuespan" data-toggle="tooltip" data-placement="top"  data-html="true" title="<h5>tax : <b>0 KWD</b> <br><br> Discount : <b>0 KWD</b></h5>">0 KWD</span><span class="expencespan"> KWD</span>November</td>
+                     <td><span class="revenuespan" data-toggle="tooltip" data-placement="top"  data-html="true" title="<h5>tax : <b>322 KWD</b> <br><br> Discount : <b>49 KWD</b></h5>">2970 KWD</span><span class="expencespan"> KWD</span>December</td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+      </div>
+   </div> -->
+</div>
+
+
+	<script>
+   /******* Range date picker *******/
+   $(function() {
+      $('input[name="daterange"]').daterangepicker();
+      $('input[name="daterangeP"]').daterangepicker();
+      $('input[name="daterangeR"]').daterangepicker();
+      var d = new Date().getFullYear();
+      $('#ProductRange').val('01/01/'+d+' - 12/31/'+d);
+      $('#CustomerRange').val('01/01/'+d+' - 12/31/'+d);
+      $('#RegisterRange').val('01/01/'+d+' - 12/31/'+d);
+
+   });
+   /************************ Chart Data *************************/
+		var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+		var lineChartData = {
+			labels : ["January","February","March","April","May","June","July","August","September","October","November","December"],
+			datasets : [
+            {
+               label: "Expences",
+               backgroundColor: "rgba(255,99,132,0.2)",
+               borderColor: "rgba(255,99,132,1)",
+               pointBackgroundColor: "rgba(255,99,132,1)",
+               pointBorderColor: "#fff",
+               pointHoverBackgroundColor: "#fff",
+               pointHoverBorderColor: "rgba(255,99,132,1)",
+               data: [,,,,,,,,,,,]
+            },
+				{
+					label: "Revenue",
+					backgroundColor : "#34495e",
+					borderColor : "#2c3e50",
+					pointBackgroundColor : "#34495e",
+					pointBorderColor : "#fff",
+					pointHoverBackgroundColor : "#fff",
+					pointHoverBorderColor : "#2c3e50",
+					data : [0,0,0,0,0,0,0,0,0,0,0,2970]
+				}
+			]
+		}
+	window.onload = function(){
+
+      // Chart.defaults.global.gridLines.display = false;
+
+		var ctx = document.getElementById("canvas").getContext("2d");
+		window.myLine = new Chart(ctx, {
+    type: 'line',
+    data: lineChartData,
+    options: {
+         scales : {
+           xAxes : [ {
+                   gridLines : {
+                      display : false
+                   }
+              } ],
+           yAxes : [ {
+                   gridLines : {
+                      display : false
+                   }
+              } ]
+          },
+         scaleFontSize: 9,
+         tooltipFillColor: "rgba(0, 0, 0, 0.71)",
+         tooltipFontSize: 10,
+			responsive: true
+		}});
+
+      /********************* pie **********************/
+      
+
+      var pieData =  {
+          labels: [
+            "Computer",
+            "tie",
+            "mens gloves",
+            "orange",
+            "strawberries"
+          ],
+          datasets: [
+           {
+               data: [6, 6, 5, 5, 5],
+               backgroundColor: [
+                   "#34495E",
+                   "#7f8c8d",
+                   "#ECF0F1",
+                   "#3498DB",
+                   "#1ABC9C"
+               ],
+               hoverBackgroundColor: [
+                   "#3e5367",
+                   "#95a5a6",
+                   "#f5fbfc",
+                   "#459eda",
+                   "#2dc6a8"
+               ]
+            }
+         ]
+      };
+
+      Chart.defaults.global.legend.display = false;
+
+      var ctx2 = document.getElementById("chart-area2").getContext("2d");
+      window.myPie = new Chart(ctx2,{
+             type: 'pie',
+             data: pieData});
+      	}
+
+
+   /********************************** Get repports functions ************************************/
+
+   function getCustomerReport()
+   {
+      // var client_id = $('#customerSelect').find('option:selected').val();
+      // var Range = $('#CustomerRange').val();
+      // var start = Range.slice(6,10)+'-'+Range.slice(0,2)+'-'+Range.slice(3,5);
+      // var end = Range.slice(19,23)+'-'+Range.slice(13,15)+'-'+Range.slice(16,18);
+      //      // ajax delete data to database
+      //      $.ajax({
+      //          url : "../../reports/getCustomerReport/",
+      //          type: "POST",
+      //          data: {client_id: client_id, start: start, end: end},
+      //          success: function(data)
+      //          {
+      //             $('#statsSection').html(data);
+      //             $('#stats').modal('show');
+      //             var table = $('#Table').DataTable( {
+      //                 dom: 'T<"clear">lfrtip',
+      //                 tableTools: {
+      //                     'bProcessing'    : true
+      //                  }
+      //               });
+      //          },
+      //          error: function (jqXHR, textStatus, errorThrown)
+      //          {
+      //             alert("error");
+      //          }
+      //      });
+
+   }
+
+   function getProductReport()
+   {
+      // var product_id = $('#productSelect').find('option:selected').val();
+      // var Range = $('#ProductRange').val();
+      // var start = Range.slice(6,10)+'-'+Range.slice(0,2)+'-'+Range.slice(3,5);
+      // var end = Range.slice(19,23)+'-'+Range.slice(13,15)+'-'+Range.slice(16,18);
+      //      // ajax set data to database
+      //   $.ajax({
+      //       url : "../../reports/getProductReport/",
+      //       type: "POST",
+      //       data: {product_id: product_id, start: start, end: end},
+      //       success: function(data)
+      //       {
+      //          $('#statsSection').html(data);
+      //          $('#stats').modal('show');
+      //          var table = $('#Table').DataTable( {
+      //              dom: 'T<"clear">lfrtip',
+      //              tableTools: {
+      //                  'bProcessing'    : true
+      //               }
+      //            });
+      //       },
+      //       error: function (jqXHR, textStatus, errorThrown)
+      //       {
+      //          alert("error");
+      //       }
+      //  });
+   }
+
+   function getRegisterReport()
+   {
+      // var store_id = $('#StoresSelect').find('option:selected').val();
+      // var Range = $('#RegisterRange').val();
+      // var start = Range.slice(6,10)+'-'+Range.slice(0,2)+'-'+Range.slice(3,5);
+      // var end = Range.slice(19,23)+'-'+Range.slice(13,15)+'-'+Range.slice(16,18);
+      //      // ajax set data to database
+      //   $.ajax({
+      //       url : "../../reports/getRegisterReport/",
+      //       type: "POST",
+      //       data: {store_id: store_id, start: start, end: end},
+      //       success: function(data)
+      //       {
+      //          $('#statsSection').html(data);
+      //          $('#stats').modal('show');
+      //          var table = $('#Table').DataTable( {
+      //              dom: 'T<"clear">lfrtip',
+      //              tableTools: {
+      //                  'bProcessing'    : true
+      //               }
+      //            });
+      //       },
+      //       error: function (jqXHR, textStatus, errorThrown)
+      //       {
+      //          alert("error");
+      //       }
+      //  });
+   }
+
+   function getStockReport()
+   {
+      var stock_id = $('#StockSelect').find('option:selected').val();
+           // ajax set data to database
+      //   $.ajax({
+      //       url : "../../reports/getStockReport/",
+      //       type: "POST",
+      //       data: {stock_id: stock_id},
+      //       success: function(data)
+      //       {
+      //          $('#statsSection').html(data);
+      //          $('#stats').modal('show');
+      //          var table = $('#Table').DataTable( {
+      //              dom: 'T<"clear">lfrtip',
+      //              tableTools: {
+      //                  'bProcessing'    : true
+      //               }
+      //            });
+      //       },
+      //       error: function (jqXHR, textStatus, errorThrown)
+      //       {
+      //          alert("error");
+      //       }
+      //  });
+   }
+
+   function getyearstats(direction) {
+      // var currentyear = parseInt($('.statYear').text());
+      // var year = direction === 'next' ? currentyear-1 : currentyear+1;
+
+      //   $.ajax({
+      //       url : "../../reports/getyearstats/"+year,
+      //       type: "POST",
+      //       success: function(data)
+      //       {
+      //          $('#statyears').html(data);
+      //          $('.statYear').text(year);
+      //          $('[data-toggle="tooltip"]').tooltip();
+      //       },
+      //       error: function (jqXHR, textStatus, errorThrown)
+      //       {
+      //          alert("error");
+      //       }
+      // });
+   }
+
+   function RegisterDetails(id) {
+      // $.ajax({
+      //    url : "../../reports/RegisterDetails/"+id,
+      //    type: "POST",
+      //    success: function(data)
+      //    {
+      //       $('#RegisterDetails').html(data);
+      //       $('#stats').modal('hide');
+      //       $('#RegisterDetail').modal('show');
+      //    },
+      //    error: function (jqXHR, textStatus, errorThrown)
+      //    {
+      //        alert("error");
+      //    }
+      // });
+   }
+
+   function CloseRegisterDetails(){
+      $('#RegisterDetail').modal('hide');
+      $('#stats').modal('show');
+   }
+
+   function delete_register(id){
+      // swal({   title: 'Are you sure ?',
+      // text: 'You will not be able to recover this Data later!',
+      // type: "warning",
+      // showCancelButton: true,
+      // confirmButtonColor: "#DD6B55",
+      // confirmButtonText: 'Yes, delete it!',
+      // closeOnConfirm: false },
+      // function(){
+      //    $.ajax({
+      //        url : "../../reports/delete_register/"+id,
+      //        type: "POST",
+      //        error: function (jqXHR, textStatus, errorThrown)
+      //        {
+      //           alert("error");
+      //        }
+      //   });
+      // $('#stats').modal('hide');
+      // swal('Deleted!', 'the data has been deleted.', "success"); });
+   }
+
+
+	</script>
+
+   <!-- Modal stats -->
+   <div class="modal fade" id="stats" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document" id="statsModal">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <h4 class="modal-title" id="stats">Stats</h4>
+         </div>
+         <div class="modal-body" id="modal-body">
+            <div id="statsSection">
+               <!-- stats goes here -->
+            </div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-default hiddenpr" data-dismiss="modal">Close</button>
+         </div>
+       </div>
+    </div>
+   </div>
+   <!-- /.Modal -->
+
+   <!-- Modal register -->
+   <div class="modal fade" id="RegisterDetail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <h4 class="modal-title" id="myModalLabel">Register Details</h4>
+         </div>
+         <div class="modal-body">
+            <div id="RegisterDetails">
+               <!-- close register detail goes here -->
+            </div>
+         </div>
+         <div class="modal-footer">
+           <a href="javascript:void(0)" onclick="CloseRegisterDetails()" class="btn btn-orange col-md-12 flat-box-btn">Return</a>
+         </div>
+       </div>
+    </div>
+   </div>
+   <!-- /.Modal -->
+
+
+
+
+      <!-- slim scroll script -->
+      <script type="text/javascript" src="../../assets/js/jquery.slimscroll.min.js"></script>
+      <!-- waves material design effect -->
+      <script type="text/javascript" src="../../assets/js/waves.min.js"></script>
+      <!-- Bootstrap Core JavaScript -->
+      <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+      <!-- keyboard widget dependencies -->
+      <script type="text/javascript" src="../../assets/js/jquery.keyboard.js"></script>
+      <script type="text/javascript" src="../../assets/js/jquery.keyboard.extension-all.js"></script>
+      <script type="text/javascript" src="../../assets/js/jquery.keyboard.extension-extender.js"></script>
+      <script type="text/javascript" src="../../assets/js/jquery.keyboard.extension-typing.js"></script>
+      <script type="text/javascript" src="../../assets/js/jquery.mousewheel.js"></script>
+      <!-- select2 plugin script -->
+      <script type="text/javascript" src="../../assets/js/select2.min.js"></script>
+      <!-- dalatable scripts -->
+      <script src="../../assets/datatables/js/jquery.dataTables.min.js"></script>
+      <script src="../../assets/datatables/js/dataTables.bootstrap.js"></script>
+      <!-- summernote js -->
+      <script src="../../assets/js/summernote.js"></script>
+      <!-- chart.js script -->
+      <script src="../../assets/js/Chart.js"></script>
+      <!-- moment JS -->
+      <script type="text/javascript" src="../../assets/js/moment.min.js"></script>
+      <!-- Include Date Range Picker -->
+      <script type="text/javascript" src="../../assets/js/daterangepicker.js"></script>
+      <!-- Sweet Alert swal -->
+      <script src="../../assets/js/sweetalert.min.js"></script>
+      <!-- datepicker script -->
+      <script src="../../assets/js/bootstrap-datepicker.min.js"></script>
+      <!-- creditCardValidator script -->
+      <script src="../../assets/js/jquery.creditCardValidator.js"></script>
+      <!-- creditCardValidator script -->
+      <script src="../../assets/js/credit-card-scanner.js"></script>
+      <script src="../../assets/js/jquery.redirect.js"></script>
+      <!-- ajax form -->
+      <script src="../../assets/js/jquery.form.min.js"></script>
+      <!-- custom script -->
+      <script src="../../assets/js/app.js"></script>
+   </body>
+</html>

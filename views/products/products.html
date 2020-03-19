@@ -1,0 +1,895 @@
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>POS - Tarbazar</title>
+      <!-- jQuery -->
+      <script type="text/javascript" src="../../assets/js/jquery-2.2.2.min.js"></script>
+      <script type="text/javascript" src="../../assets/js/loading.js"></script>
+
+      <!--<link rel="stylesheet" href="../..//../../reset/odr/style.css" type="text/css" />
+      <script type="text/javascript" src="../..//../../reset/odr/odr.js.php"></script>-->
+      <!-- normalize & reset style -->
+      <link rel="stylesheet" href="../../assets/css/normalize.min.css"  type='text/css'>
+      <link rel="stylesheet" href="../../assets/css/reset.min.css"  type='text/css'>
+      <link rel="stylesheet" href="../../assets/css/jquery-ui.css"  type='text/css'>
+      <!-- google lato font -->
+      <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+      <!-- Bootstrap Core CSS -->
+      <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+      <!-- bootstrap-horizon -->
+      <link href="../../assets/css/bootstrap-horizon.css" rel="stylesheet">
+      <!-- datatable style -->
+      <link href="../../assets/datatables/css/dataTables.bootstrap.css" rel="stylesheet">
+      <!-- font awesome -->
+      <link rel="stylesheet" href="../../assets/css/font-awesome.min.css">
+      <!-- include summernote css-->
+      <link href="../../assets/css/summernote.css" rel="stylesheet">
+      <!-- waves -->
+      <link rel="stylesheet" href="../../assets/css/waves.min.css">
+      <!-- daterangepicker -->
+      <link rel="stylesheet" type="text/css" href="../../assets/css/daterangepicker.css" />
+      <!-- css for the preview keyset extension -->
+      <link href="../../assets/css/keyboard-previewkeyset.css" rel="stylesheet">
+      <!-- keyboard widget style -->
+      <link href="../../assets/css/keyboard.css" rel="stylesheet">
+      <!-- Select 2 style -->
+      <link href="../../assets/css/select2.min.css" rel="stylesheet">
+      <!-- Sweet alert swal -->
+      <link rel="stylesheet" type="text/css" href="../../assets/css/sweetalert.css">
+      <!-- datepicker css -->
+      <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap-datepicker.min.css">
+      <!-- Custom CSS -->
+      <link href="../../assets/css/Style-Light.css" rel="stylesheet">
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+      <!-- Navigation -->
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                 <span class="sr-only">Toggle navigation</span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="#"><img src="../../files/Setting/emptysideswhite.png" alt="logo"  style='max-height: 45px; max-width: 200px'></a>
+            </div>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav">
+                  <li class="flat-box"><a href="../Register.html"><i class="fa fa-credit-card"></i> POS</a></li>
+                 <li class="flat-box"><a href="./products.html"><i class="fa fa-archive"></i> Product</a></li>
+                 <li class="dropdown">
+                    <a href="#" class="dropdown-toggle flat-box" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-users"></i> People <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                       <li class="flat-box"><a href="../customers/customers.html"><i class="fa fa-user"></i> Customers</a></li>
+                       <li class="flat-box"><a href="../suppliers/suppliers.html"><i class="fa fa-truck"></i> Suppliers</a></li>
+                    </ul>
+                 </li>
+                 <li class="flat-box"><a href="../sales/sales.html"><i class="fa fa-ticket"></i> Sales</a></li>
+                 <li class="flat-box"><a href="../expenses/expense.html"><i class="fa fa-usd"></i> Expense</a></li>
+                 <!-- <li class="dropdown">
+                    <a href="#" class="dropdown-toggle flat-box" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bookmark"></i> Categories <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                       <li class="flat-box"><a href="../../categories"><i class="fa fa-archive"></i> Product</a></li>
+                       <li class="flat-box"><a href="../../categorie_expences"><i class="fa fa-usd"></i> Expense</a></li>
+                    </ul>
+                 </li> -->
+                 <li class="flat-box"><a href="../settings/settings.html"><i class="fa fa-cogs"></i> Setting</a></li>                
+                  <li class="flat-box"><a href="../reports/reports.html"><i class="fa fa-line-chart"></i> Reports</a></li>               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  <li><a href="">
+                        <img class="img-circle topbar-userpic hidden-xs" src="../../files/Avatar/9fff9cc26e539214e9a5fd3b6a10cde9.jpg" width="30px" height="30px">
+                        <span class="hidden-xs"> &nbsp;&nbsp;admin Doe </span>
+                     </a>
+                  </li>
+                  <!-- <li class="dropdown language">
+                     <a href="#" class="dropdown-toggle flat-box" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <img src="../../assets/img/flags/en.png" class="flag" alt="language">
+                        <span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li class="flat-box"><a href="../../dashboard/change/english"><img src="../../assets/img/flags/en.png" class="flag" alt="language"> English</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/francais"><img src="../../assets/img/flags/fr.png" class="flag" alt="language"> Français</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/portuguese"><img src="../../assets/img/flags/pr.png" class="flag" alt="language"> Portuguese</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/spanish"><img src="../../assets/img/flags/sp.png" class="flag" alt="language"> Spanish</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/arabic"><img src="../../assets/img/flags/ar.png" class="flag" alt="language"> العربية</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/danish"><img src="../../assets/img/flags/da.png" class="flag" alt="language"> Danish</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/turkish"><img src="../../assets/img/flags/tr.png" class="flag" alt="language"> Turkish</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/greek"><img src="../../assets/img/flags/gr.png" class="flag" alt="language"> Greek</a></li>
+                     </ul>
+                  </li> -->
+                  <li class="flat-box"><a href="../Login.html" title="Logout"><i class="fa fa-sign-out fa-lg"></i></a></li>
+               </ul>
+            </div>
+            
+         </div>
+         <!-- /.container -->
+      </nav>
+      <!-- Page Content -->
+
+
+      <!-- Page Content -->
+<div class="container">
+   <div class="row" style="margin-top:100px;">
+      <form action="products" method="post" class="form-inline float-right hidden-xs hidden-sm" style="margin-bottom:-50px;">
+         <label for="Supplier">Supplier</label>
+         <select class="form-control" id="Supplier" name="filtersupp">
+            <option value=''>All</option>
+                           <option value="supplier 01" >supplier 01</option>
+                           <option value="Supplier 02" >Supplier 02</option>
+                     </select>
+         <label for="Producttype">Product type</label>
+         <select class="form-control" id="Producttype" name="filtertype">
+            <option value=''>All</option>
+            <option value="0" >Standard</option>
+            <option value="1" >Service</option>
+            <option value="2" >combination</option>
+         </select>
+         <button type="submit" class="btn btn-default">Apply Filter</button>
+      </form>
+      
+      <table id="Table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+          <thead>
+              <tr>
+                  <th class="hidden-xs">Code</th>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th class="hidden-xs">Product Description</th>
+                  <th class="hidden-xs">Quantity</th>
+                  <th>Price</th>
+                  <th>Action</th>
+              </tr>
+          </thead>
+
+          <tbody id="table-data">
+           
+              </tbody>
+      </table>
+   
+   </div>
+   <!-- Button trigger modal -->
+   <button type="button" class="btn btn-add btn-lg" data-toggle="modal" data-target="#Addproduct">Add Product</button>
+
+   <div class=" float-right">
+      <a class="btn btn-add btn-xs" href="#" id="downloadCSV">Download CSV</a>
+      <a class="btn btn-add btn-xs"><input type="file" id="fileUpload"/></a>
+      <a class="btn btn-add btn-xs" data-target="#ImportProducts" id="uploadCSV">Upload CSV file</a>
+      
+   </div>
+</div>
+<!-- /.container -->
+<div class="modal fade" id="ImageModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <h4 class="modal-title" id="myModalLabel">Image</h4>
+         </div>
+         <div class="modal-body">
+           <img id="image" src="" class="img-responsive center" alt="" />
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
+      </div>
+   </div>
+</div>
+
+<script src="../../assets/js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+var items = [];
+$(function() {
+   $('#addform').submit(function()
+   {
+      var error = false;
+      $('.productcode').each(function() {
+         if($(this).text() === $("#ProductCode").val()){
+            $('#codeError').show();
+            error = true;
+         }
+      });
+      if(error) return false;
+       // ... continue work
+   });
+
+   $('#Type').on('change', function() {
+     if( this.value == 1 ) //if service
+     {
+        $("#pushaceP").slideUp();
+        $("#alertqty").slideUp();
+        $("#supply").slideUp();
+        $("#UnitP").slideUp();
+     } else if ( this.value == 2 ) {
+        $("#pushaceP").slideUp();
+        $("#alertqty").slideUp();
+        $("#supply").slideUp();
+        $("#UnitP").slideUp();
+     } else {
+        $("#pushaceP").slideDown();
+        $("#alertqty").slideDown();
+        $("#supply").slideDown();
+        $("#UnitP").slideDown();
+     }
+   });
+});
+
+
+$(document).on("click", ".open-modalimage", function () {
+  var myId = $(this).data('id');
+  $(".modal-body #image").attr("src","../..//files/products/"+myId);
+});
+
+
+var quant = [];
+var quantw = [];
+var pricestore = [];
+var productID;
+$(document).ready(function() {
+
+   $('#addform').ajaxForm({ //FormID - id of the form.
+
+         success: function (data) {
+            if(data === "service")
+            {
+               location.reload();
+            }else if($('#Type').value == 1) {
+               $('#stockcontent').html(data);
+               $('#stock').modal('show');
+               $('#Addproduct').modal('hide');
+
+               $( "[id='quantity']" ).on('change', function() {
+                  var storeID = $(this).attr("store-id");
+                  quant.push({
+                     'store_id': storeID,
+                     'quantity': $(this).val()
+                  });
+               });
+
+               $( "[id='quantityw']" ).on('change', function() {
+                  var warehouseID = $(this).attr("warehouse-id");
+                  quantw.push({
+                     'warehouse_id': warehouseID,
+                     'quantity': $(this).val()
+                  });
+               });
+
+               $( "[id='pricestr']" ).on('change', function() {
+                  var storeID = $(this).attr("store-id");
+                  pricestore.push({
+                     'store_id': storeID,
+                     'price': $(this).val()
+                  });
+               });
+
+               productID = $('#prodctID').val();
+            } else {
+
+               productID = $('#prodctID').val();
+               $('#combocontent').html(data);
+               $('#combo').modal('show');
+               $('#Addproduct').modal('hide');
+
+               $("#add_item").autocomplete({
+                  source: '../../productcontroller/suggest',
+                  minLength: 1,
+                  autoFocus: false,
+                  delay: 200,
+                  select: function( event, ui ) {
+
+                           event.preventDefault();
+                           if (ui.item.id !== 0) {
+                              var row = add_product_item(ui.item);
+                              if (row) {
+                                 $(this).val('');
+                              }
+                           } else {
+                              alert('no match found');
+                              return false;
+                           }
+                        },
+                  response: function (event, ui) {
+                       if ($(this).val().length >= 16 && ui.content[0].id == 0) {
+                           alert('no match found');
+                           $('#add_item').focus();
+                           $(this).val('');
+                       }
+                       else if (ui.content.length == 1 && ui.content[0].id != 0) {
+                           ui.item = ui.content[0];
+                           $(this).data('ui-autocomplete')._trigger('select', 'autocompleteselect', ui);
+                           $(this).autocomplete('close');
+                           $(this).removeClass('ui-autocomplete-loading');
+                       }
+                       else if (ui.content.length == 1 && ui.content[0].id == 0) {
+                           alert('no match found');
+                           $('#add_item').focus();
+                           $(this).val('');
+
+                       }
+                  }
+               });
+
+            }
+      }
+   });
+});
+
+function add_product_item(item, noitem) {
+   if (item == null && noitem == null) {
+      return false;
+   }
+   if(noitem != 1) {
+      var item_id = 0;
+      $.each(items, function(i){
+         if(items[i].item_id == item.id) {
+            items[i].quantity = (parseFloat(items[i].quantity) + 1);
+            item_id = item.id;
+            return false;
+         }
+      });
+      if(item_id == 0) {
+         item.qty = 1;
+         items.push({
+            'item_id': item.id,
+            'quantity': item.qty,
+            'code': item.code,
+            'name': item.name
+         });
+      }
+   }
+
+
+   $("#Comboprd tbody").empty();
+   items.forEach(function(item) {
+      var Tr = $('<tr id="rowid_' + item.item_id + '" class="item_' + item.item_id + '"></tr>');
+      td = '<td>' + item.name + ' (' + item.code + ')</td>';
+      td += '<td><input class="form-control text-center" name="quantity" type="text" value="' + item.quantity + '" item-id="' + item.item_id + '" id="quantit"></td>';
+      td += '<td class="text-center"><i class="fa fa-times tip delt" id="' + item.item_id + '" title="Remove" style="cursor:pointer;"></i></td>';
+      Tr.html(td);
+      Tr.prependTo("#Comboprd");
+   });
+   console.log(items);
+   $( "[id='quantit']" ).on('change', function() {
+      var itemID = $(this).attr("item-id");
+      var val = $(this).val();
+      items.forEach(function(e) {
+         if(e.item_id == itemID) {
+            e.quantity = val;
+         }
+      });
+      console.log(items);
+   });
+   return true;
+
+}
+
+function addcombo(){
+   var productID = $('#prodctID').val();
+   // $.ajax({
+   //        url : "../../productcontroller/addcombo/",
+   //        type: "POST",
+   //        data: {items: items, productID: productID},
+   //        success: function(data)
+   //        {
+   //           location.reload();
+   //        },
+   //        error: function (jqXHR, textStatus, errorThrown)
+   //        {
+   //           alert("error");
+   //        }
+   //   });
+}
+
+function updatestock(){
+   //    $.ajax({
+   //        url : "../../products/updatestock/",
+   //        data: {quant: quant, quantw: quantw, productID: productID, pricest: pricestore},
+   //        type: "POST",
+   //        success: function(data)
+   //        {
+   //          location.reload();
+   //        },
+   //        error: function (jqXHR, textStatus, errorThrown)
+   //        {
+   //           alert("error");
+   //        }
+   //   });
+    };
+function modifystock(id){
+//    $.ajax({
+//        url : "../../productcontroller/modifystock/"+id,
+//        type: "POST",
+//        success: function(data)
+//        {
+//           $('#stockcontent').html(data);
+//           $('#stock').modal('show');
+
+//           $( "[id='quantity']" ).on('change', function() {
+//             var storeID = $(this).attr("store-id");
+//             quant.push({
+//                'store_id': storeID,
+//                'quantity': $(this).val()
+//            });
+//            });
+
+//            $( "[id='quantityw']" ).on('change', function() {
+//             var warehouseID = $(this).attr("warehouse-id");
+//             quantw.push({
+//                'warehouse_id': warehouseID,
+//                'quantity': $(this).val()
+//            });
+//            });
+
+//            $( "[id='pricestr']" ).on('change', function() {
+//             var storeID = $(this).attr("store-id");
+//             pricestore.push({
+//                'store_id': storeID,
+//                'price': $(this).val()
+//            });
+//            });
+
+//            productID = $('#prodctID').val();
+//        },
+//        error: function (jqXHR, textStatus, errorThrown)
+//        {
+//           alert("error");
+//        }
+//   });
+}
+
+
+function Viewproduct(id){
+//    $.ajax({
+//        url : "../../productcontroller/Viewproduct/"+id,
+//        type: "POST",
+//        success: function(data)
+//        {
+//           $('#viewSectionProduct').html(data);
+//           $('#Viewproduct').modal('show');
+//        },
+//        error: function (jqXHR, textStatus, errorThrown)
+//        {
+//           alert("error");
+//        }
+//   });
+}
+
+$(document).on('click', '.delt', function () {
+    var id = $(this).attr('id');
+    $.each(items, function(i){
+       if(items[i].item_id == id) {
+           items.splice(i,1);
+           return false;
+       }
+   });
+    $(this).closest('#rowid_' + id).remove();
+    console.log(items);
+});
+
+function modifycombo(id){
+//    $.ajax({
+//        url : "../../productcontroller/modifycombo/"+id,
+//        type: "POST",
+//        success: function(data)
+//        {
+//           $('#combocontent').html(data);
+//           $('#Viewproduct').modal('hide');
+//           $('#combo').modal('show');
+//           $.ajax({
+//               url : "../../productcontroller/getcombos/"+id,
+//               type: "POST",
+//               success: function(data){
+//                  dataitems = JSON.parse(data);
+//                  dataitems.forEach(function(e) {
+//                     items.push({
+//                        'item_id': e.item_id,
+//                        'quantity': e.quantity,
+//                        'code': e.code,
+//                        'name': e.name
+//                     });
+//                   });
+//             },
+//               error: function (jqXHR, textStatus, errorThrown){alert("error");}
+//          });
+//           console.log(items);
+//           $("#add_item").autocomplete({
+//              source: '../../productcontroller/suggest',
+//              minLength: 1,
+//              autoFocus: false,
+//              delay: 200,
+//              select: function( event, ui ) {
+
+//                       event.preventDefault();
+//                       if (ui.item.id !== 0) {
+//                          var row = add_product_item(ui.item);
+//                          if (row) {
+//                             $(this).val('');
+//                          }
+//                       } else {
+//                          alert('no match found');
+//                          return false;
+//                       }
+//                    },
+//              response: function (event, ui) {
+//                   if ($(this).val().length >= 16 && ui.content[0].id == 0) {
+//                       alert('no match found');
+//                       $('#add_item').focus();
+//                       $(this).val('');
+//                   }
+//                   else if (ui.content.length == 1 && ui.content[0].id != 0) {
+//                       ui.item = ui.content[0];
+//                       $(this).data('ui-autocomplete')._trigger('select', 'autocompleteselect', ui);
+//                       $(this).autocomplete('close');
+//                       $(this).removeClass('ui-autocomplete-loading');
+//                   }
+//                   else if (ui.content.length == 1 && ui.content[0].id == 0) {
+//                       alert('no match found');
+//                       $('#add_item').focus();
+//                       $(this).val('');
+
+//                   }
+//              }
+//           });
+//        },
+//        error: function (jqXHR, textStatus, errorThrown)
+//        {
+//           alert("error");
+//        }
+//   });
+}
+
+
+function barcode(){
+   row = $('#Brrows').val();
+   num = $('#Brnum').val();
+//    $.ajax({
+//        url : "../../productcontroller/barcode/"+row+"/"+num+"/"+productBcode,
+//        type: "POST",
+//        success: function(data)
+//        {
+//           $('#printSection').html(data);
+//           $('#barcodeP').modal('show');
+//        },
+//        error: function (jqXHR, textStatus, errorThrown)
+//        {
+//           alert("error");
+//        }
+//   });
+}
+
+function Printbarcode() {
+   $('.modal-body').removeAttr('id');
+   window.print();
+   $('.modal-body').attr('id', 'modal-body');
+}
+
+function makePrdInvis(id, prd) {
+//    $.ajax({
+//        url : "../../productcontroller/makePrdInvis/"+id+"/"+prd,
+//        type: "POST",
+//        success: function(data){},
+//        error: function (jqXHR, textStatus, errorThrown)
+//        {
+//           alert("error");
+//        }
+//   });
+}
+
+
+
+</script>
+
+<!-- Modal -->
+<div class="modal fade" id="Addproduct" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Product</h4>
+      </div>
+      <form>      <div class="modal-body">
+            <div class="form-group">
+             <label for="Type">Type</label>
+             <select class="form-control" name="type" id="Type">
+               <option value="0">Standard</option>
+               <option value="1">Service</option>
+               <option value="2">combination</option>
+             </select>
+            </div>
+            <div class="form-group controls">
+             <label for="ProductCode">Code</label>
+             <input type="text" maxlength="30" Required name="code" class="form-control" id="ProductCode" placeholder="Code">
+             <p id="codeError" class="red" hidden>*code must be unique</p>
+           </div>
+           <div class="form-group">
+             <label for="ProductName">Name</label>
+             <input type="text" name="name" maxlength="25" Required class="form-control" id="ProductName" placeholder="Name">
+           </div>
+           <div class="form-group">
+             <label for="Category">Category</label>
+             <select class="form-control" name="category" id="Category">
+               <option>Category</option>
+                                 <option value="computers">computers</option>
+                                 <option value="fruits">fruits</option>
+                                 <option value="Clothing">Clothing</option>
+                                 <option value="mobile">mobile</option>
+                           </select>
+           </div>
+           <div class="form-group" id="supply">
+             <label for="Supplier">Supplier</label>
+             <select class="form-control" name="supplier" id="Supplier">
+               <option>Supplier</option>
+                                 <option value="supplier 01">supplier 01</option>
+                                 <option value="Supplier 02">Supplier 02</option>
+                           </select>
+           </div>
+           <div class="form-group" id="pushaceP">
+             <label for="PurchasePrice">Purchase Price (Rs)</label>
+             <input type="number" step="any" value="0" Required name="cost" class="form-control" id="PurchasePrice" placeholder="Purchase Price">
+           </div>
+           <div class="form-group">
+             <label for="Tax">tax (%)</label>
+             <input type="text" maxlength="10" name="tax" class="form-control" id="Tax" placeholder="tax (%)">
+           </div>
+           <div class="form-group">
+              <label for="taxType">Tax Method</label>
+              <select class="form-control" name="taxmethod" id="taxType">
+                <option value="0">inclusive</option>
+                <option value="1">exclusive</option>
+              </select>
+           </div>
+           <div class="form-group">
+             <label for="Price">Price (Rs)</label>
+             <input type="number" step="any" Required name="price" class="form-control" id="Price" placeholder="Price">
+           </div>
+           <div class="form-group" id="UnitP">
+             <label for="Unit">Product Unit</label>
+             <input type="text" step="any" name="unit" class="form-control" id="Unit" placeholder="Product Unit">
+           </div>
+           <div class="form-group" id="alertqty">
+             <label for="AlertQt">Alert Quantity</label>
+             <input type="number" value="0" name="alertqt" class="form-control" id="AlertQt" placeholder="Alert Quantity">
+           </div>
+           <div class="form-group">
+             <label for="exampleInputFile">Input Image</label>
+             <input type="file" name="userfile" id="ImageInput">
+           </div>
+           <div class="form-group">
+             <label for="ProductDescription">Product Description</label>
+             <textarea id="summernote" name="description"></textarea>
+          </div>
+           <div class="btn-group white" data-toggle="buttons">
+              <p class="help-block">Choose color to Display in POS.</p>
+              <label class="btn color01">
+                 <input type="radio" name="color" id="option1" value="color01" autocomplete="off" checked> C1
+              </label>
+              <label class="btn color02">
+                 <input type="radio" name="color" id="option2" value="color02" autocomplete="off"> C2
+              </label>
+              <label class="btn color03">
+                 <input type="radio" name="color" id="option3" value="color03" autocomplete="off"> C3
+              </label>
+              <label class="btn color04">
+                 <input type="radio" name="color" id="option4" value="color04" autocomplete="off"> C4
+              </label>
+              <label class="btn color05">
+                 <input type="radio" name="color" id="option5" value="color05" autocomplete="off"> C5
+              </label>
+              <label class="btn color06">
+                 <input type="radio" name="color" id="option6" value="color06" autocomplete="off"> C6
+              </label>
+              <label class="btn color07">
+                 <input type="radio" name="color" id="option7" value="color07" autocomplete="off"> C7
+              </label>
+           </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-add" id="addProduct">Submit</button>
+      </div>
+   </form>    </div>
+ </div>
+</div>
+<!-- /.Modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="ImportProducts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Product</h4>
+      </div>
+      <div class="modal-body">
+         <div class="form-group">
+           this option is disabled on the demo
+         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-add">Submit</button>
+      </div>
+    </div>
+ </div>
+</div>
+<!-- /.Modal -->
+
+
+  <!-- Modal combo -->
+  <div class="modal fade" id="combo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document" id="comboModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="combo">Combinations</h4>
+        </div>
+        <div class="modal-body" id="modal-body">
+           <div id="combocontent">
+              <!-- combo goes here -->
+           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default hiddenpr" onclick="location.reload();">Close</button>
+          <button type="button" class="btn btn-add hiddenpr" onclick="addcombo()">submit</button>
+        </div>
+      </div>
+   </div>
+  </div>
+  <!-- /.Modal -->
+
+  <!-- Modal stock -->
+  <div class="modal fade" id="stock" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" id="stockModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="stock">Stock</h4>
+        </div>
+        <div class="modal-body" id="modal-body">
+           <div id="stockcontent">
+              <!-- stock goes here -->
+           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default hiddenpr" onclick="location.reload();">Close</button>
+          <button type="button" class="btn btn-add hiddenpr" onclick="updatestock()">submit</button>
+        </div>
+      </div>
+  </div>
+  </div>
+  <!-- /.Modal -->
+
+
+  <!-- Modal view -->
+  <div class="modal fade" id="Viewproduct" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog modal-lg" role="document" id="viewModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="view">View product</h4>
+        </div>
+        <div class="modal-body" id="modal-body">
+           <div id="viewSectionProduct">
+              <!-- view goes here -->
+           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default hiddenpr" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+   </div>
+  </div>
+  <!-- /.Modal -->
+
+
+  <!-- Modal barcode -->
+  <div class="modal fade" id="barcode" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document" id="stockModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="barcode">Stock</h4>
+        </div>
+        <div class="modal-body" id="modal-body">
+           <div class="form-group col-md-6">
+             <label for="Price">column Number</label>
+             <select Required class="form-control" id="Brrows">
+                <option value="12">1</option>
+                <option value="6">2</option>
+                <option value="4">3</option>
+             </select>
+           </div>
+           <div class="form-group col-md-6">
+             <label for="Price">Number</label>
+             <input type="number" Required name="num" class="form-control" id="Brnum" placeholder="Number" value="10">
+           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default hiddenpr" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-add hiddenpr" onclick="barcode()">submit</button>
+        </div>
+      </div>
+   </div>
+  </div>
+  <!-- /.Modal -->
+
+
+  <!-- Modal barcode -->
+  <div class="modal fade" id="barcodeP" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document" id="stockModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="barcodeP">Stock</h4>
+        </div>
+        <div class="modal-body" id="modal-body">
+           <div id="printSection" style="text-align: center;">
+             <!-- content -->
+           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default hiddenpr" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-add hiddenpr" onclick="Printbarcode()">print</button>
+        </div>
+      </div>
+   </div>
+  </div>
+  <!-- /.Modal -->
+
+
+
+
+      <!-- slim scroll script -->
+      <script type="text/javascript" src="../../assets/js/jquery.slimscroll.min.js"></script>
+      <!-- waves material design effect -->
+      <script type="text/javascript" src="../../assets/js/waves.min.js"></script>
+      <!-- Bootstrap Core JavaScript -->
+      <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+      <!-- keyboard widget dependencies -->
+      <script type="text/javascript" src="../../assets/js/jquery.keyboard.js"></script>
+      <script type="text/javascript" src="../../assets/js/jquery.keyboard.extension-all.js"></script>
+      <script type="text/javascript" src="../../assets/js/jquery.keyboard.extension-extender.js"></script>
+      <script type="text/javascript" src="../../assets/js/jquery.keyboard.extension-typing.js"></script>
+      <script type="text/javascript" src="../../assets/js/jquery.mousewheel.js"></script>
+      <!-- select2 plugin script -->
+      <script type="text/javascript" src="../../assets/js/select2.min.js"></script>
+      <!-- dalatable scripts -->
+      <script src="../../assets/datatables/js/jquery.dataTables.min.js"></script>
+      <script src="../../assets/datatables/js/dataTables.bootstrap.js"></script>
+      <!-- summernote js -->
+      <script src="../../assets/js/summernote.js"></script>
+      <!-- chart.js script -->
+      <script src="../../assets/js/Chart.js"></script>
+      <!-- moment JS -->
+      <script type="text/javascript" src="../../assets/js/moment.min.js"></script>
+      <!-- Include Date Range Picker -->
+      <script type="text/javascript" src="../../assets/js/daterangepicker.js"></script>
+      <!-- Sweet Alert swal -->
+      <script src="../../assets/js/sweetalert.min.js"></script>
+      <!-- datepicker script -->
+      <script src="../../assets/js/bootstrap-datepicker.min.js"></script>
+      <!-- creditCardValidator script -->
+      <script src="../../assets/js/jquery.creditCardValidator.js"></script>
+      <!-- creditCardValidator script -->
+      <script src="../../assets/js/credit-card-scanner.js"></script>
+      <script src="../../assets/js/jquery.redirect.js"></script>
+      <!-- ajax form -->
+      <script src="../../assets/js/jquery.form.min.js"></script>
+      <!-- custom script -->
+      <script src="../../assets/js/app.js"></script>
+      <script src="../../scripts/csv_handling.js"></script>
+      <script src="../../scripts/add_products.js"></script>
+      <script src="../../scripts/modify_products.js"></script>
+   </body>
+</html>

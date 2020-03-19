@@ -1,0 +1,681 @@
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>POS - Tarbazar</title>
+      <!-- jQuery -->
+      <script type="text/javascript" src="../../assets/js/jquery-2.2.2.min.js"></script>
+      <script type="text/javascript" src="../../assets/js/loading.js"></script>
+
+      <!--<link rel="stylesheet" href="../..//../../reset/odr/style.css" type="text/css" />
+      <script type="text/javascript" src="../..//../../reset/odr/odr.js.php"></script>-->
+      <!-- normalize & reset style -->
+      <link rel="stylesheet" href="../../assets/css/normalize.min.css"  type='text/css'>
+      <link rel="stylesheet" href="../../assets/css/reset.min.css"  type='text/css'>
+      <link rel="stylesheet" href="../../assets/css/jquery-ui.css"  type='text/css'>
+      <!-- google lato font -->
+      <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+      <!-- Bootstrap Core CSS -->
+      <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+      <!-- bootstrap-horizon -->
+      <link href="../../assets/css/bootstrap-horizon.css" rel="stylesheet">
+      <!-- datatable style -->
+      <link href="../../assets/datatables/css/dataTables.bootstrap.css" rel="stylesheet">
+      <!-- font awesome -->
+      <link rel="stylesheet" href="../../assets/css/font-awesome.min.css">
+      <!-- include summernote css-->
+      <link href="../../assets/css/summernote.css" rel="stylesheet">
+      <!-- waves -->
+      <link rel="stylesheet" href="../../assets/css/waves.min.css">
+      <!-- daterangepicker -->
+      <link rel="stylesheet" type="text/css" href="../../assets/css/daterangepicker.css" />
+      <!-- css for the preview keyset extension -->
+      <link href="../../assets/css/keyboard-previewkeyset.css" rel="stylesheet">
+      <!-- keyboard widget style -->
+      <link href="../../assets/css/keyboard.css" rel="stylesheet">
+      <!-- Select 2 style -->
+      <link href="../../assets/css/select2.min.css" rel="stylesheet">
+      <!-- Sweet alert swal -->
+      <link rel="stylesheet" type="text/css" href="../../assets/css/sweetalert.css">
+      <!-- datepicker css -->
+      <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap-datepicker.min.css">
+      <!-- Custom CSS -->
+      <link href="../../assets/css/Style-Light.css" rel="stylesheet">
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+      <!-- Navigation -->
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                 <span class="sr-only">Toggle navigation</span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="#"><img src="../../files/Setting/emptysideswhite.png" alt="logo"  style='max-height: 45px; max-width: 200px'></a>
+            </div>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav">
+                  <li class="flat-box"><a href="../Register.html"><i class="fa fa-credit-card"></i> POS</a></li>
+                 <li class="flat-box"><a href="../products/products.html"><i class="fa fa-archive"></i> Product</a></li>
+                 <li class="dropdown">
+                    <a href="#" class="dropdown-toggle flat-box" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-users"></i> People <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                       <li class="flat-box"><a href="../customers/customers.html"><i class="fa fa-user"></i> Customers</a></li>
+                       <li class="flat-box"><a href="../suppliers/suppliers.html"><i class="fa fa-truck"></i> Suppliers</a></li>
+                    </ul>
+                 </li>
+                 <li class="flat-box"><a href="./sales.html"><i class="fa fa-ticket"></i> Sales</a></li>
+                 <li class="flat-box"><a href="../expenses/expense.html"><i class="fa fa-usd"></i> Expense</a></li>
+                 <!-- <li class="dropdown">
+                    <a href="#" class="dropdown-toggle flat-box" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bookmark"></i> Categories <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                       <li class="flat-box"><a href="../../categories"><i class="fa fa-archive"></i> Product</a></li>
+                       <li class="flat-box"><a href="../../categorie_expences"><i class="fa fa-usd"></i> Expense</a></li>
+                    </ul>
+                 </li> -->
+                 <li class="flat-box"><a href="../settings/settings.html"><i class="fa fa-cogs"></i> Setting</a></li>                
+                  <li class="flat-box"><a href="../reports/reports.html"><i class="fa fa-line-chart"></i> Reports</a></li>              
+                </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  <li><a href="">
+                        <img class="img-circle topbar-userpic hidden-xs" src="../../files/Avatar/9fff9cc26e539214e9a5fd3b6a10cde9.jpg" width="30px" height="30px">
+                        <span class="hidden-xs"> &nbsp;&nbsp;admin Doe </span>
+                     </a>
+                  </li>
+                  <!-- <li class="dropdown language">
+                     <a href="#" class="dropdown-toggle flat-box" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <img src="../../assets/img/flags/en.png" class="flag" alt="language">
+                        <span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li class="flat-box"><a href="../../dashboard/change/english"><img src="../../assets/img/flags/en.png" class="flag" alt="language"> English</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/francais"><img src="../../assets/img/flags/fr.png" class="flag" alt="language"> Français</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/portuguese"><img src="../../assets/img/flags/pr.png" class="flag" alt="language"> Portuguese</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/spanish"><img src="../../assets/img/flags/sp.png" class="flag" alt="language"> Spanish</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/arabic"><img src="../../assets/img/flags/ar.png" class="flag" alt="language"> العربية</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/danish"><img src="../../assets/img/flags/da.png" class="flag" alt="language"> Danish</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/turkish"><img src="../../assets/img/flags/tr.png" class="flag" alt="language"> Turkish</a></li>
+                        <li class="flat-box"><a href="../../dashboard/change/greek"><img src="../../assets/img/flags/gr.png" class="flag" alt="language"> Greek</a></li>
+                     </ul>
+                  </li> -->
+                  <li class="flat-box"><a href="../Login.html" title="Logout"><i class="fa fa-sign-out fa-lg"></i></a></li>
+               </ul>
+            </div>
+            
+         </div>
+         <!-- /.container -->
+      </nav>
+      <!-- Page Content -->
+
+
+        <div class="container">
+
+    <h3>Sales</h3>
+    <br />
+    <br />
+    <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+      <thead class="thead-inverse">
+        <tr>
+          <th>Number</th>
+          <th>Customer</th>
+          <th>tax</th>
+          <th>Discount</th>
+          <th>Total</th>
+          <th>Ceated By</th>
+          <th>Total Items</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+
+  <script type="text/javascript">
+
+    var save_method; //for save method string
+    var table;
+    $(document).ready(function() {
+      table = $('#table').DataTable({
+
+        "processing": true, //Feature control the processing indicator.
+        "serverSide": true, //Feature control DataTables' server-side processing mode.
+        "order": [], //Initial no order.
+        // Load data for the table's content from an Ajax source
+        "ajax": {
+            "url": "../../invoices/ajax_list",
+            "type": "POST"
+        },
+
+        //Set column definition initialisation properties.
+        "columnDefs": [
+        {
+          "targets": [ -1 ], //last column
+          "orderable": false, //set not orderable
+        },
+        ],
+         "bInfo": false,
+         // "fnRowCallback": function(nRow, aData, iDisplayIndex) {
+         //     nRow.setAttribute('data-order',aData[4]);
+         // }
+      });
+    });
+
+
+    function reload_table()
+    {
+      table.ajax.reload(null,false); //reload datatable ajax
+    }
+
+    function delete_invoice(id)
+    {
+      swal({   title: 'Are you sure ?',
+      text: 'You will not be able to recover this Data later!',
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: 'Yes, delete it!',
+      closeOnConfirm: false },
+      function(){
+         // ajax delete data to database
+         // $.ajax({
+         //    url : "../../invoices/ajax_delete/"+id,
+         //    type: "POST",
+         //    dataType: "JSON",
+         //    success: function(data)
+         //    {
+         //       //if success reload ajax table
+         //       $('#modal_form').modal('hide');
+         //       reload_table();
+         //    },
+         //    error: function (jqXHR, textStatus, errorThrown)
+         //    {
+         //       alert('Error adding / update data');
+         //    }
+         // });
+         swal('Deleted!', 'the data has been deleted.', "success"); });
+    }
+
+    function showTicket(id){
+
+   //    $.ajax({
+   //        url : "../../invoices/ShowTicket/"+id,
+   //        type: "POST",
+   //        success: function(data)
+   //        {
+   //            $('#printSection').html(data);
+   //            $('#ticket').modal('show');
+   //        },
+   //        error: function (jqXHR, textStatus, errorThrown)
+   //        {
+   //           alert("error");
+   //        }
+   //   });
+    };
+
+    function showInvoice(id){
+
+   //    $.ajax({
+   //        url : "../../invoices/showInvoice/"+id,
+   //        type: "POST",
+   //        success: function(data)
+   //        {
+   //            $('#printSectionInvoice').html(data);
+   //            $('#invoice').modal('show');
+   //        },
+   //        error: function (jqXHR, textStatus, errorThrown)
+   //        {
+   //           alert("error");
+   //        }
+   //   });
+    };
+
+    function Edit_Sale(id){
+
+   //    $.ajax({
+   //        url : "../../invoices/Edit_Ajax/"+id,
+   //        type: "POST",
+   //        success: function(data)
+   //        {
+   //            $('#editSection').html(data);
+   //            $('#Edit').modal('show');
+   //        },
+   //        error: function (jqXHR, textStatus, errorThrown)
+   //        {
+   //           alert("error");
+   //        }
+   //   });
+    };
+
+    function update_Sale(){
+      var id = $('#ClientId').val();
+      var customerId = $('#customerSelect').val();
+      var customer = $('#customerSelect option:selected').text();
+      var Status = $('#changeStatus').val();
+
+   //    $.ajax({
+   //        url : "../../invoices/Update_Sale/"+id,
+   //        data: {customer: customer, customerId: customerId, Status: Status},
+   //        type: "POST",
+   //        success: function(data)
+   //        {
+   //            reload_table();
+   //            $('#Edit').modal('hide');
+   //        },
+   //        error: function (jqXHR, textStatus, errorThrown)
+   //        {
+   //           alert("error");
+   //        }
+   //   });
+    };
+
+    function PrintTicket() {
+       $('.modal-body').removeAttr('id');
+       window.print();
+       $('.modal-body').attr('id', 'modal-body');
+    }
+
+    function pdfreceipt(){
+
+
+       var content = $('#printSection').html();
+       $.redirect('../../pos/pdfreceipt/', { content: content });
+
+    }
+
+    function pdfinvoice(){
+
+
+       var content = $('#printSectionInvoice').html();
+       $.redirect('../../pos/pdfreceipt/', { content: content });
+
+    }
+
+var saleID;
+    function payaments(id){
+      saleID = id;
+   //    $.ajax({
+   //        url : "../../invoices/payaments/"+id,
+   //        type: "POST",
+   //        success: function(data)
+   //        {
+   //            $('#payementsSection').html(data);
+   //            $('#payements').modal('show');
+   //        },
+   //        error: function (jqXHR, textStatus, errorThrown)
+   //        {
+   //           alert("error");
+   //        }
+   //   });
+    };
+
+    function AddPayement(type){
+      var createdBy = 'admin Doe';
+      var Paid = $('#Paid').val();
+      var ccnum = $('#CreditCardNum').val();
+      var ccmonth = $('#CreditCardMonth').val();
+      var ccyear = $('#CreditCardYear').val();
+      var ccv = $('#CreditCardCODECV').val();
+      var paidMethod = $('#paymentMethod').find('option:selected').val();
+      switch(paidMethod) {
+          case '1':
+              paidMethod += '~'+$('#CreditCardNum').val()+'~'+$('#CreditCardHold').val();
+              break;
+          case '2':
+              paidMethod += '~'+$('#ChequeNum').val();
+      }
+
+   //   $.ajax({
+   //       url : "../../invoices/Addpayament/"+type,
+   //       type: "POST",
+   //       data: {created_by: createdBy, paid: Paid, paidmethod: paidMethod, ccnum: ccnum, ccmonth: ccmonth, ccyear: ccyear, ccv: ccv, sale_id: saleID},
+   //       success: function(data)
+   //       {
+   //          $('#payementsSection').load("../../invoices/payaments/"+saleID);
+   //          $('#Addpayament').modal('hide');
+   //       },
+   //       error: function (jqXHR, textStatus, errorThrown)
+   //       {
+   //          alert("error");
+   //       }
+   //   });
+
+     $('#CreditCardNum').val('');
+     $('#CreditCardHold').val('');
+     $('#CreditCardYear').val('');
+     $('#CreditCardMonth').val('');
+     $('#CreditCardCODECV').val('');
+   }
+
+   $(document).ready(function() {
+      $('.Paid').show();
+      $('.ReturnChange').show();
+      $('.CreditCardNum').hide();
+      $('.CreditCardHold').hide();
+      $('.ChequeNum').hide();
+      $('.stripe-btn').hide();
+
+      $("#paymentMethod").change(function(){
+         var p_met = $(this).find('option:selected').val();
+         if (p_met === '0') {
+            $('.Paid').show();
+            $('.ReturnChange').show();
+            // $('.CreditCardNum').hide();
+            // $('.CreditCardHold').hide();
+            // $('.CreditCardMonth').hide();
+            // $('.CreditCardYear').hide();
+            // $('.CreditCardCODECV').hide();
+            // $('#CreditCardNum').val('');
+            // $('#CreditCardHold').val('');
+            // $('#CreditCardYear').val('');
+            // $('#CreditCardMonth').val('');
+            // $('#CreditCardCODECV').val('');
+            // $('.stripe-btn').hide();
+            // $('.ChequeNum').hide();
+          } 
+         //else if (p_met === '1') {
+         //    $('.Paid').show();
+         //    $('.ReturnChange').hide();
+         //    $('.CreditCardNum').show();
+         //    $('.CreditCardHold').show();
+         //    $('.CreditCardMonth').show();
+         //    $('.CreditCardYear').show();
+         //    $('.CreditCardCODECV').show();
+         //    $('.stripe-btn').show();
+         //    $('.ChequeNum').hide();
+         // } else if (p_met === '2') {
+         //    $('.Paid').show();
+         //    $('.ReturnChange').hide();
+         //    $('.CreditCardNum').hide();
+         //    $('.CreditCardHold').hide();
+         //    $('.CreditCardMonth').hide();
+         //    $('.CreditCardYear').hide();
+         //    $('.CreditCardCODECV').hide();
+         //    $('#CreditCardNum').val('');
+         //    $('#CreditCardHold').val('');
+         //    $('#CreditCardYear').val('');
+         //    $('#CreditCardMonth').val('');
+         //    $('#CreditCardCODECV').val('');
+         //    $('.stripe-btn').hide();
+         //    $('.ChequeNum').show();
+         // }
+      });
+
+      /********************************* Credit Card infos section ****************************************/
+//       $('#CreditCardNum').validateCreditCard(function(result) {
+//          var cardtype = result.card_type == null ? '-' : result.card_type.name;
+//          $('.CreditCardNum i').removeClass('dark-blue');
+//          $('#' + cardtype).addClass('dark-blue');
+//       });
+
+//       $('#CreditCardNum').keypress(function (e) {
+//          var data = $(this).val();
+//          if(data.length > 22){
+
+//           if (e.keyCode == 13) {
+//               e.preventDefault();
+
+//               var c = new SwipeParserObj(data);
+
+//                   $('#CreditCardNum').val(c.account);
+//                   $('#CreditCardHold').val(c.account_name);
+//                   $('#CreditCardYear').val(c.exp_year);
+//                   $('#CreditCardMonth').val(c.exp_month);
+//                   $('#CreditCardCODECV').val('');
+
+//               }
+//               else {
+//                   $('#CreditCardNum').val('');
+//                   $('#CreditCardHold').val('');
+//                   $('#CreditCardYear').val('');
+//                   $('#CreditCardMonth').val('');
+//                   $('#CreditCardCODECV').val('');
+//               }
+
+//               $('#CreditCardCODECV').focus();
+//               $('#CreditCardNum').validateCreditCard(function(result) {
+//                  var cardtype = result.card_type == null ? '-' : result.card_type.name;
+//                  $('.CreditCardNum i').removeClass('dark-blue');
+//                  $('#' + cardtype).addClass('dark-blue');
+//               });
+//       }
+
+//       });
+ });
+
+function addpymntBtn(){
+   if(true)
+     $('#Addpayament').modal('show');
+  else
+      swal("requires an open register");
+}
+
+function deletepayement(id){
+//    $.ajax({
+//        url : "../../invoices/deletepayement/"+id+"/"+saleID,
+//        type: "POST",
+//        success: function(data)
+//        {
+//           $('#payementsSection').load("../../invoices/payaments/"+saleID);
+//        },
+//        error: function (jqXHR, textStatus, errorThrown)
+//        {
+//           alert("error");
+//        }
+//   });
+}
+
+
+  </script>
+
+
+  <!-- Modal ticket -->
+  <div class="modal fade" id="ticket" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document" id="ticketModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="ticket">Receipt</h4>
+        </div>
+        <div class="modal-body" id="modal-body">
+           <div id="printSection">
+              <!-- Ticket goes here -->
+              <center><h1 style="color:#34495E">Empty</h1></center>
+           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default hiddenpr" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-add hiddenpr" href="javascript:void(0)" onClick="pdfreceipt()">PDF</button>
+          <button type="button" class="btn btn-add hiddenpr" onclick="PrintTicket()">print</button>
+        </div>
+      </div>
+   </div>
+  </div>
+  <!-- /.Modal -->
+
+  <!-- Modal invoice -->
+  <div class="modal fade" id="invoice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog modal-lg" role="document" id="invoiceModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="invoice">INVOICE</h4>
+        </div>
+        <div class="modal-body" id="modal-body">
+           <div id="printSectionInvoice">
+              <!-- Invoice goes here -->
+           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default hiddenpr" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-add hiddenpr" href="javascript:void(0)" onClick="pdfinvoice()">PDF</button>
+          <button type="button" class="btn btn-add hiddenpr" onclick="PrintTicket()">print</button>
+        </div>
+      </div>
+   </div>
+  </div>
+  <!-- /.Modal -->
+
+  <!-- Modal edit -->
+  <div class="modal fade" id="Edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document" id="editModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="edit">Edit</h4>
+        </div>
+        <div class="modal-body" id="modal-body">
+           <div id="editSection">
+             <!-- edit goes here -->
+           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default hiddenpr" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-add hiddenpr" onclick="update_Sale()">Submit</button>
+        </div>
+      </div>
+   </div>
+  </div>
+  <!-- /.Modal -->
+
+  <!-- Modal payements -->
+  <div class="modal fade" id="payements" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document" id="payementsModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="edit">Payements</h4>
+        </div>
+        <div class="modal-body" id="modal-body">
+           <div id="payementsSection">
+             <!-- payements goes here -->
+           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default hiddenpr" data-dismiss="modal" onclick="reload_table();">Close</button>
+        </div>
+      </div>
+   </div>
+  </div>
+  <!-- /.Modal -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="Addpayament" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="Addpayament">Add Payements</h4>
+        </div>
+        <form>
+        <div class="modal-body">
+             <div class="form-group">
+               <h2 id="TotalModal"></h2>
+            </div>
+             <div class="form-group">
+               <label for="paymentMethod">Payment method:</label>
+               <select class="js-select-options form-control" id="paymentMethod">
+                 <option value="0">Cash</option>
+                 <!-- <option value="1">Credit Card</option>
+                 <option value="2">Cheque</option> -->
+              </select>
+             </div>
+             <div class="form-group Paid">
+               <label for="Paid">Paid</label>
+               <input type="text" value="0" name="paid" class="form-control " id="Paid" placeholder="Paid">
+             </div>
+             <!-- <div class="form-group CreditCardNum">
+               <i class="fa fa-cc-visa fa-2x" id="visa" aria-hidden="true"></i>
+               <i class="fa fa-cc-mastercard fa-2x" id="mastercard" aria-hidden="true"></i>
+               <i class="fa fa-cc-amex fa-2x" id="amex" aria-hidden="true"></i>
+               <i class="fa fa-cc-discover fa-2x" id="discover" aria-hidden="true"></i>
+               <label for="CreditCardNum">Credit Card Number (swipe)</label>
+               <input type="text" class="form-control cc-num" id="CreditCardNum" placeholder="Credit Card Number (swipe)">
+             </div>
+             <div class="clearfix"></div>
+             <div class="form-group CreditCardHold col-md-4 padding-s">
+               <input type="text" class="form-control" id="CreditCardHold" placeholder="Credit Card Holder">
+             </div>
+             <div class="form-group CreditCardHold col-md-2 padding-s">
+               <input type="text" class="form-control" id="CreditCardMonth" placeholder="Month">
+             </div>
+             <div class="form-group CreditCardHold col-md-2 padding-s">
+               <input type="text" class="form-control" id="CreditCardYear" placeholder="Year">
+             </div>
+             <div class="form-group CreditCardHold col-md-4 padding-s">
+               <input type="text" class="form-control" id="CreditCardCODECV" placeholder="CODE CV">
+             </div>
+             <div class="form-group ChequeNum">
+               <label for="ChequeNum">Cheque Number</label>
+               <input type="text" name="chequenum" class="form-control" id="ChequeNum" placeholder="Cheque Number">
+             </div>
+            <div class="clearfix"></div>
+        </div> -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-add stripe-btn" onclick="AddPayement(2)"><i class="fa fa-cc-stripe" aria-hidden="true"></i> StripePayment</button>          <button type="button" class="btn btn-add" onclick="AddPayement(1)">Submit</button>
+        </div>
+     </form>      </div>
+   </div>
+  </div>
+  <!-- /.Modal -->
+
+
+
+
+      <!-- slim scroll script -->
+      <script type="text/javascript" src="../../assets/js/jquery.slimscroll.min.js"></script>
+      <!-- waves material design effect -->
+      <script type="text/javascript" src="../../assets/js/waves.min.js"></script>
+      <!-- Bootstrap Core JavaScript -->
+      <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+      <!-- keyboard widget dependencies -->
+      <script type="text/javascript" src="../../assets/js/jquery.keyboard.js"></script>
+      <script type="text/javascript" src="../../assets/js/jquery.keyboard.extension-all.js"></script>
+      <script type="text/javascript" src="../../assets/js/jquery.keyboard.extension-extender.js"></script>
+      <script type="text/javascript" src="../../assets/js/jquery.keyboard.extension-typing.js"></script>
+      <script type="text/javascript" src="../../assets/js/jquery.mousewheel.js"></script>
+      <!-- select2 plugin script -->
+      <script type="text/javascript" src="../../assets/js/select2.min.js"></script>
+      <!-- dalatable scripts -->
+      <script src="../../assets/datatables/js/jquery.dataTables.min.js"></script>
+      <script src="../../assets/datatables/js/dataTables.bootstrap.js"></script>
+      <!-- summernote js -->
+      <script src="../../assets/js/summernote.js"></script>
+      <!-- chart.js script -->
+      <script src="../../assets/js/Chart.js"></script>
+      <!-- moment JS -->
+      <script type="text/javascript" src="../../assets/js/moment.min.js"></script>
+      <!-- Include Date Range Picker -->
+      <script type="text/javascript" src="../../assets/js/daterangepicker.js"></script>
+      <!-- Sweet Alert swal -->
+      <script src="../../assets/js/sweetalert.min.js"></script>
+      <!-- datepicker script -->
+      <script src="../../assets/js/bootstrap-datepicker.min.js"></script>
+      <!-- creditCardValidator script -->
+      <script src="../../assets/js/jquery.creditCardValidator.js"></script>
+      <!-- creditCardValidator script -->
+      <script src="../../assets/js/credit-card-scanner.js"></script>
+      <script src="../../assets/js/jquery.redirect.js"></script>
+      <!-- ajax form -->
+      <script src="../../assets/js/jquery.form.min.js"></script>
+      <!-- custom script -->
+      <script src="../../assets/js/app.js"></script>
+   </body>
+</html>
